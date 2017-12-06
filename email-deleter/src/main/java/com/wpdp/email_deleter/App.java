@@ -1,5 +1,6 @@
 package com.wpdp.email_deleter;
 
+import java.io.Console;
 import java.util.Properties;
 import javax.mail.Folder;
 import javax.mail.Message;
@@ -10,10 +11,11 @@ import javax.mail.Store;
 public class App 
 {
 	public static void main(String[] args) {
+		Console console = System.console();
 		String mailStoreType = "pop3";
-	    String username = "abc@gmail.com";// change accordingly
-	    String password = "*****";// change accordingly
-
+	    String username = console.readLine("Enter username:");
+	    String password = console.readLine("Enter password:");
+	    
 	    delete(mailStoreType, username, password);
 	}
     
