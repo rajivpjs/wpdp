@@ -34,18 +34,22 @@ public class App
     	    store.connect("pop.gmail.com", user, password);
 
     	    // create the folder object and open it
-    	    Folder inbox = store.getFolder("INBOX");
-    	    inbox.open(Folder.READ_WRITE);
-    	    int inboxMassegeCount = inbox.getMessageCount();
-    	    Message[] messages = inbox.getMessages();
-    	    for (int i = 0; i < inboxMassegeCount; i++) {
+    	    // Folder inbox = store.getFolder("INBOX");
+	    Folder[] f = store.getDefaultFolder().list("*");
+    	    // inbox.open(Folder.READ_WRITE);
+    	    // int inboxMassegeCount = inbox.getMessageCount();
+    	    // Message[] messages = inbox.getMessages();
+    	    // for (int i = 0; i < inboxMassegeCount; i++) {
     	    	// messages[i].setFlag(Flags.Flag.DELETED, true);
-    	    }
-    	    System.out.println("Messages in inbox are: " + messages.length);
+    	    // }
+	    for(Folder fd : f) {
+		System.out.println("Folder name is: " + fd.getName());
+	    }
+    	    // System.out.println("Messages in inbox are: " + messages.length);
     	    // inbox.expunge();
     	         
     	    // expunges the folder to remove messages which are marked deleted
-    	    inbox.close(true);
+    	    // inbox.close(true);
     	    store.close();
     	    } catch (MessagingException e) {
     	    	e.printStackTrace();
