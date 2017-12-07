@@ -43,7 +43,7 @@ public class App
     	    	// messages[i].setFlag(Flags.Flag.DELETED, true);
     	    // }
 	    for(Folder fd : f) {
-		System.out.println("Folder name is: " + fd.getName());
+		System.out.println("Folder name is: " + fd.getFullName());
 	    }
     	    System.out.println("Messages in inbox are: " + inboxMessageCount);
     	    // inbox.expunge();  	         
