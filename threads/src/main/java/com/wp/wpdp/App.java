@@ -1,13 +1,13 @@
 package com.wp.wpdp;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        Runner runner = new Runner();
+        runner.start();
+
+        Runner runner2 = new Runner();
+        runner2.start();
     }
 }
