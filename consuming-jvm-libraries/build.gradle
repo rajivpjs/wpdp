@@ -1,0 +1,10 @@
+apply plugin : 'application'
+mainClassName = 'GreeterApp'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.fasterxml.jackson.core:jackson-core:2.9.3'
+}
